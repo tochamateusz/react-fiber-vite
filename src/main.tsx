@@ -1,10 +1,13 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { App } from "./App";
+import { Box } from "./App";
+import { Canvas } from "@react-three/fiber";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <Canvas>
+    <ambientLight />
+    <pointLight position={[10, 10, 10]} />
+    <Box position={[-1.2, 0, 0]} />
+    <Box position={[1.2, 0, 0]} />
+  </Canvas>,
 );
